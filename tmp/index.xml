@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Tmps on Eric in Js</title>
+    <title>Tmps on Eric in js</title>
     <link>https://ericfong.github.io/tmp/</link>
-    <description>Recent content in Tmps on Eric in Js</description>
+    <description>Recent content in Tmps on Eric in js</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
     <lastBuildDate>Wed, 23 Aug 2017 18:03:09 +0800</lastBuildDate>
