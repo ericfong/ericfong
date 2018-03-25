@@ -134,19 +134,5 @@ Andrew-&amp;gt;&amp;gt;China: I am good thanks!
 &lt;p&gt;&lt;/p&gt;</description>
     </item>
     
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>https://ericfong.github.io/tmp/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>https://ericfong.github.io/tmp/syntax-highlighting/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function helloWorld () {
-  alert(&amp;quot;Hello, World!&amp;quot;)
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
   </channel>
 </rss>

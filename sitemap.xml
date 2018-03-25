@@ -17,6 +17,13 @@
   </url>
   
   <url>
+    <loc>https://ericfong.github.io/post/what-is-declarative/</loc>
+    <lastmod>2018-03-26T00:28:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  
+  <url>
     <loc>https://ericfong.github.io/tmp/hidden-post/</loc>
     <lastmod>2018-03-08T22:01:19+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -66,13 +73,6 @@
   </url>
   
   <url>
-    <loc>https://ericfong.github.io/tmp/syntax-highlighting/</loc>
-    <lastmod>2017-08-30T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  
-  <url>
     <loc>https://ericfong.github.io/categories/</loc>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
@@ -114,6 +114,13 @@
   </url>
   
   <url>
+    <loc>https://ericfong.github.io/post/</loc>
+    <lastmod>2018-03-26T00:28:05+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0</priority>
+  </url>
+  
+  <url>
     <loc>https://ericfong.github.io/tags/preview/</loc>
     <lastmod>2017-08-23T18:03:09+08:00</lastmod>
     <changefreq>weekly</changefreq>
@@ -130,20 +137,6 @@
   <url>
     <loc>https://ericfong.github.io/categories/shortcodes/</loc>
     <lastmod>2018-02-01T18:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ericfong.github.io/tags/syntax-highlighting/</loc>
-    <lastmod>2017-08-30T16:01:23+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ericfong.github.io/categories/syntax-highlighting/</loc>
-    <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>
@@ -172,13 +165,6 @@
   <url>
     <loc>https://ericfong.github.io/tags/tag-4/</loc>
     <lastmod>2017-08-30T01:53:34+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>https://ericfong.github.io/tags/tag-5/</loc>
-    <lastmod>2017-08-30T16:01:23+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0</priority>
   </url>

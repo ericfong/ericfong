@@ -1,0 +1,507 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>What Is Declarative? - Eric Js Dev Blog</title>
+  <meta name="renderer" content="webkit" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+<meta name="theme-color" content="#f8f5ec" />
+<meta name="msapplication-navbutton-color" content="#f8f5ec">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="#f8f5ec">
+
+
+<meta name="author" content="Eric" />
+  <meta name="description" content="According to wiki Declarative programming means
+ a style of building the structure and elements of computer programs — that expresses the logic of a computation without describing its control flow
+ Control flow in here means all kind of if-then-else, switch, loops
+I suddenly jump out of this question when I come across react-fns’s readme. It say:
+ Browser API’s turned into declarative React components and HoC
+ Are React components must be declarative?" />
+
+  <meta name="keywords" content="Eric, dev, blog" />
+
+
+
+
+
+
+<meta name="generator" content="Hugo 0.37.1" />
+
+
+<link rel="canonical" href="https://ericfong.github.io/post/what-is-declarative/" />
+
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+
+
+
+
+
+
+
+<link href="/dist/even.min.css?v=3.1.1" rel="stylesheet">
+<link href="/lib/fancybox/jquery.fancybox-3.1.20.min.css" rel="stylesheet">
+
+
+
+
+<meta property="og:title" content="What Is Declarative?" />
+<meta property="og:description" content="According to wiki Declarative programming means
+ a style of building the structure and elements of computer programs — that expresses the logic of a computation without describing its control flow
+ Control flow in here means all kind of if-then-else, switch, loops
+I suddenly jump out of this question when I come across react-fns’s readme. It say:
+ Browser API’s turned into declarative React components and HoC
+ Are React components must be declarative?" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ericfong.github.io/post/what-is-declarative/" />
+
+
+
+<meta property="article:published_time" content="2018-03-26T00:28:05&#43;08:00"/>
+
+<meta property="article:modified_time" content="2018-03-26T00:28:05&#43;08:00"/>
+
+
+
+
+
+
+
+
+
+
+
+<meta itemprop="name" content="What Is Declarative?">
+<meta itemprop="description" content="According to wiki Declarative programming means
+ a style of building the structure and elements of computer programs — that expresses the logic of a computation without describing its control flow
+ Control flow in here means all kind of if-then-else, switch, loops
+I suddenly jump out of this question when I come across react-fns’s readme. It say:
+ Browser API’s turned into declarative React components and HoC
+ Are React components must be declarative?">
+
+
+<meta itemprop="datePublished" content="2018-03-26T00:28:05&#43;08:00" />
+<meta itemprop="dateModified" content="2018-03-26T00:28:05&#43;08:00" />
+<meta itemprop="wordCount" content="689">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What Is Declarative?"/>
+<meta name="twitter:description" content="According to wiki Declarative programming means
+ a style of building the structure and elements of computer programs — that expresses the logic of a computation without describing its control flow
+ Control flow in here means all kind of if-then-else, switch, loops
+I suddenly jump out of this question when I come across react-fns’s readme. It say:
+ Browser API’s turned into declarative React components and HoC
+ Are React components must be declarative?"/>
+
+<!--[if lte IE 9]>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/classlist/1.1.20170427/classList.min.js"></script>
+<![endif]-->
+
+<!--[if lt IE 9]>
+  <script src="https://cdn.jsdelivr.net/npm/html5shiv@3.7.3/dist/html5shiv.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/respond.js@1.4.2/dest/respond.min.js"></script>
+<![endif]-->
+
+</head>
+<body>
+  <div id="mobile-navbar" class="mobile-navbar">
+  <div class="mobile-header-logo">
+    <a href="/" class="logo">Eric</a>
+  </div>
+  <div class="mobile-navbar-icon">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</div>
+<nav id="mobile-menu" class="mobile-menu slideout-menu">
+  <ul class="mobile-menu-list">
+    <a href="/">
+        <li class="mobile-menu-item">Home</li>
+      </a><a href="/post/">
+        <li class="mobile-menu-item">Archives</li>
+      </a><a href="/tags/">
+        <li class="mobile-menu-item">Tags</li>
+      </a><a href="/categories/">
+        <li class="mobile-menu-item">Categories</li>
+      </a><a href="/about/">
+        <li class="mobile-menu-item">About</li>
+      </a>
+  </ul>
+</nav>
+  <div class="container" id="mobile-panel">
+    <header id="header" class="header">
+        <div class="logo-wrapper">
+  <a href="/" class="logo">Eric</a>
+</div>
+
+<nav class="site-navbar">
+  <ul id="menu" class="menu">
+    <li class="menu-item">
+        <a class="menu-item-link" href="/">Home</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/post/">Archives</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/tags/">Tags</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/categories/">Categories</a>
+      </li><li class="menu-item">
+        <a class="menu-item-link" href="/about/">About</a>
+      </li>
+  </ul>
+</nav>
+    </header>
+
+    <main id="main" class="main">
+      <div class="content-wrapper">
+        <div id="content" class="content">
+          <article class="post">
+    
+    <header class="post-header">
+      <h1 class="post-title">What Is Declarative?</h1>
+
+      <div class="post-meta">
+        <span class="post-time"> 2018-03-26 </span>
+        
+        
+        
+      </div>
+    </header>
+
+    
+    
+<div class="post-toc" id="post-toc">
+  <h2 class="post-toc-title">Contents</h2>
+  
+  <div class="post-toc-content always-active">
+    
+  </div>
+</div>
+
+    
+    <div class="post-content">
+      <p>According to wiki Declarative programming means</p>
+
+<blockquote>
+<p>a style of building the structure and elements of computer programs — that expresses the logic of a computation without describing its control flow</p>
+</blockquote>
+
+<p>Control flow in here means all kind of if-then-else, switch, loops</p>
+
+<p>I suddenly jump out of this question when I come across <a href="https://github.com/jaredpalmer/react-fns">react-fns</a>’s readme. It say:</p>
+
+<blockquote>
+<p>Browser API’s turned into declarative React components and HoC</p>
+</blockquote>
+
+<p>Are React components must be declarative?</p>
+
+<p>Component like this IS declarative</p>
+
+<pre><code class="language-js">const Comp = () =&gt; (
+  &lt;ol&gt;
+    &lt;li&gt;Apple&lt;/li&gt;
+    &lt;li&gt;Boy&lt;/li&gt;
+  &lt;/ol&gt;
+)
+</code></pre>
+
+<p>Component like this is NOT very declarative to me</p>
+
+<pre><code class="language-js">const Comp = ({ list }) =&gt; (
+  &lt;ol&gt;
+    {list.map(item =&gt; {
+      if (item.type === 'selected') {
+        return &lt;li style={{ color: 'blue' }}&gt;{item.name} (selected)&lt;/li&gt;
+      }
+      return &lt;li&gt;{item.name}&lt;/li&gt;
+    })}
+  &lt;/ol&gt;
+)
+</code></pre>
+
+<p>Even more&hellip;</p>
+
+<pre><code class="language-js">const Comp = ({ data }) =&gt; {
+  const { fruitlist } = _.get(data, ['xxGraphQuery'])
+  const list = letMeDoSomeMagicFunc(fruitlist)
+  let evenHasCounting = 0
+  return (
+    &lt;div&gt;
+      &lt;ol&gt;
+        {list.filter(item =&gt; item.moreComplex).map(item =&gt; {
+          if (item.type === 'selected') {
+            return &lt;li style={{ color: 'blue' }}&gt;{item.name} (selected)&lt;/li&gt;
+          }
+          evenHasCounting++
+          return &lt;li&gt;{item.name}&lt;/li&gt;
+        })}
+      &lt;/ol&gt;
+      {evenHasCounting}
+    &lt;/div&gt;
+  )
+}
+</code></pre>
+
+<p>React component (no matter class component with lifecycle or stateless component with only a function) can become very un-declarative.</p>
+
+<p>Any template language, DSL can become very un-declarative. People add a lot of control tags and attributes to angular and vue template. To some extend, you can never understand them in a short-time. Then, how can you say they are declarative?</p>
+
+<p>Example:</p>
+
+<pre><code class="language-html">&lt;ul class=&quot;example-animate-container&quot;&gt;
+  &lt;li class=&quot;animate-repeat&quot; ng-repeat=&quot;friend in friends | filter:q as results track by friend.name&quot;&gt;
+    [{{$index + 1}}] {{friend.name}} who is {{friend.age}} years old.
+  &lt;/li&gt;
+  &lt;li class=&quot;animate-repeat&quot; ng-if=&quot;results.length === 0&quot;&gt;
+    &lt;strong&gt;No results found...&lt;/strong&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+
+<p>What is going on for <code>friend in friends | filter:q as results track by friend.name</code>?</p>
+
+<hr />
+
+<p>Ok. come back to React world. Take a example from <a href="https://github.com/jaredpalmer/react-fns">react-fns</a></p>
+
+<pre><code class="language-js">import { withWindowSize } from 'react-fns'
+
+const Inner = ({ width, height }) =&gt; (
+  &lt;div&gt;
+    Window size: {width}, {height}
+  &lt;/div&gt;
+)
+
+export default withWindowSize(Inner)
+</code></pre>
+
+<p>HoC is never very declarative to name. <code>withWindowSize</code> tell me provide window size to <code>Inner</code> but never tell me what props it provides. If you use a lot of HoC, your comp&rsquo;s props will be full of stuffs and you don&rsquo;t know your props connect with the HoC.</p>
+
+<p>It become worse in data loading</p>
+
+<pre><code class="language-js">const Page = ({ dataA, dataB, dataC, d, e, f, g, h, i, j, k, l,... }) =&gt; (
+  &lt;div&gt;
+    &lt;ChildA dataA={dataA} dataB={dataB} ... /&gt;
+    &lt;ChildA dataB={dataB} dataC={dataC} ... /&gt;
+    ...
+  &lt;/div&gt;
+)
+// move up all children data loading to Page level to prevent each list-item fetch api
+export default fetchAllDataForChildrenHoc(Page)
+</code></pre>
+
+<p>How about <code>renderProp</code>?</p>
+
+<pre><code class="language-js">const Example = () =&gt; (
+  &lt;WindowSize
+    render={({ width, height }) =&gt; (
+      &lt;div&gt;
+        Window size: {width}, {height}
+      &lt;/div&gt;
+    )}
+  /&gt;
+)
+</code></pre>
+
+<p><code>renderProp</code> become very popular recently, because new context api is using it.</p>
+
+<pre><code class="language-js">const ThemeContext = React.createContext('light')
+class ThemeProvider extends React.Component {
+  state = { theme: 'light' }
+  render() {
+    return (
+      &lt;ThemeContext.Provider value={this.state.theme}&gt;
+        {this.props.children}
+      &lt;/ThemeContext.Provider&gt;
+    )
+  }
+}
+class App extends React.Component {
+  render() {
+    return (
+      &lt;ThemeProvider&gt;
+        &lt;ThemeContext.Consumer&gt;
+          {val =&gt; {
+            return &lt;div&gt;{val}&lt;/div&gt;
+          }}
+        &lt;/ThemeContext.Consumer&gt;
+      &lt;/ThemeProvider&gt;
+    )
+  }
+}
+</code></pre>
+
+<p>What about?</p>
+
+<pre><code class="language-js">const App = () =&gt; (
+  &lt;C1.Consumer&gt;
+    {v1 =&gt; (
+      &lt;C2.Consumer&gt;
+        {v2 =&gt; (
+          &lt;C3.Consumer&gt;
+            {v3 =&gt; (
+              &lt;C4.Consumer&gt;
+                {v4 =&gt; (
+                  &lt;C5.Consumer&gt;
+                    {v5 =&gt; (
+                      &lt;div&gt;
+                        {v1} {v2} {v3} {v4} {v5}
+                      &lt;/div&gt;
+                    )}
+                  &lt;/C5.Consumer&gt;
+                )}
+              &lt;/C4.Consumer&gt;
+            )}
+          &lt;/C3.Consumer&gt;
+        )}
+      &lt;/C2.Consumer&gt;
+    )}
+  &lt;/C1.Consumer&gt;
+)
+</code></pre>
+
+<p>Still not bad. What about?</p>
+
+<pre><code class="language-js">const App = () =&gt; (
+  &lt;C1.Consumer&gt;
+    {v1 =&gt; (
+      &lt;C2.Consumer&gt;
+        {v2 =&gt; (
+          &lt;C3.Consumer&gt;
+            {v3 =&gt; (
+              &lt;C4.Consumer&gt;
+                {v4 =&gt;
+                  v2 &amp;&amp; (
+                    &lt;C5.Consumer&gt;
+                      {v5 =&gt; (
+                        &lt;div&gt;
+                          {v1} {v2} {v3} {v4} {v5}
+                        &lt;/div&gt;
+                      )}
+                    &lt;/C5.Consumer&gt;
+                  )
+                }
+              &lt;/C4.Consumer&gt;
+            )}
+          &lt;/C3.Consumer&gt;
+        )}
+      &lt;/C2.Consumer&gt;
+    )}
+  &lt;/C1.Consumer&gt;
+)
+</code></pre>
+
+<p>Can you see <code>v2 &amp;&amp;</code> which add if-then-else and expect what will happen to the code.</p>
+
+<p>To sum up, any template language can become un-declarative. But nothing wrong with that. No need to be 100% declarative. As long as you can keep 90% declarative, and most part of your code is easily readable. Move up most if-then-else logic to function and use function name to name it. Then your code is better.</p>
+
+    </div>
+
+    
+    <div class="post-copyright">
+  <p class="copyright-item">
+    <span class="item-title">Author</span>
+    <span class="item-content">Eric</span>
+  </p>
+  <p class="copyright-item">
+    <span class="item-title">LastMod</span>
+    <span class="item-content">2018-03-26</span>
+  </p>
+  
+  
+</div>
+
+    
+    
+
+    <footer class="post-footer">
+      
+
+      
+      <nav class="post-nav">
+        
+        
+      </nav>
+    </footer>
+  </article>
+        </div>
+        
+  
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="social-links">
+      <a href="mailto:your@email.com" class="iconfont icon-email" title="email"></a>
+      <a href="http://localhost:1313" class="iconfont icon-stack-overflow" title="stack-overflow"></a>
+      <a href="http://localhost:1313" class="iconfont icon-twitter" title="twitter"></a>
+      <a href="http://localhost:1313" class="iconfont icon-facebook" title="facebook"></a>
+      <a href="http://localhost:1313" class="iconfont icon-linkedin" title="linkedin"></a>
+      <a href="http://localhost:1313" class="iconfont icon-google" title="google"></a>
+      <a href="http://localhost:1313" class="iconfont icon-github" title="github"></a>
+      <a href="http://localhost:1313" class="iconfont icon-weibo" title="weibo"></a>
+      <a href="http://localhost:1313" class="iconfont icon-zhihu" title="zhihu"></a>
+      <a href="http://localhost:1313" class="iconfont icon-douban" title="douban"></a>
+      <a href="http://localhost:1313" class="iconfont icon-pocket" title="pocket"></a>
+      <a href="http://localhost:1313" class="iconfont icon-tumblr" title="tumblr"></a>
+      <a href="http://localhost:1313" class="iconfont icon-instagram" title="instagram"></a>
+  <a href="https://ericfong.github.io/index.xml" type="application/rss+xml" class="iconfont icon-rss" title="rss"></a>
+</div>
+
+<div class="copyright">
+  <span class="power-by">
+    Powered by <a class="hexo-link" href="https://gohugo.io">Hugo</a>
+  </span>
+  <span class="division">|</span>
+  <span class="theme-info">
+    Theme - 
+    <a class="theme-link" href="https://github.com/olOwOlo/hugo-theme-even">Even</a>
+  </span>
+
+  
+
+  <span class="copyright-year">
+    &copy; 
+    
+      2017 - 
+    2018
+    <span class="heart">
+      <i class="iconfont icon-heart"></i>
+    </span>
+    <span class="author">Eric</span>
+  </span>
+</div>
+    </footer>
+
+    <div class="back-to-top" id="back-to-top">
+      <i class="iconfont icon-up"></i>
+    </div>
+  </div>
+  
+<script src="/lib/highlight/highlight.pack.js?v=20171001"></script><script type="text/javascript" src="/lib/jquery/jquery-3.2.1.min.js"></script>
+  <script type="text/javascript" src="/lib/slideout/slideout-1.0.1.min.js"></script>
+  <script type="text/javascript" src="/lib/fancybox/jquery.fancybox-3.1.20.min.js"></script>
+<script type="text/javascript" src="/dist/even.min.js?v=3.1.1"></script>
+
+
+
+
+
+
+
+
+</body>
+</html>

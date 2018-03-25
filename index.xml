@@ -32,6 +32,20 @@ It makes use of a variety of open source projects including:
     </item>
     
     <item>
+      <title>What Is Declarative?</title>
+      <link>https://ericfong.github.io/post/what-is-declarative/</link>
+      <pubDate>Mon, 26 Mar 2018 00:28:05 +0800</pubDate>
+      
+      <guid>https://ericfong.github.io/post/what-is-declarative/</guid>
+      <description>According to wiki Declarative programming means
+ a style of building the structure and elements of computer programs — that expresses the logic of a computation without describing its control flow
+ Control flow in here means all kind of if-then-else, switch, loops
+I suddenly jump out of this question when I come across react-fns’s readme. It say:
+ Browser API’s turned into declarative React components and HoC
+ Are React components must be declarative?</description>
+    </item>
+    
+    <item>
       <title>This is a hidden post.</title>
       <link>https://ericfong.github.io/tmp/hidden-post/</link>
       <pubDate>Thu, 08 Mar 2018 17:40:19 +0800</pubDate>
@@ -140,20 +154,6 @@ c2(no)-&amp;gt;op2-&amp;gt;e
 Note right of China: China thinks\nabout it
 China--&amp;gt;Andrew: How are you?
 Andrew-&amp;gt;&amp;gt;China: I am good thanks!
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;/p&gt;</description>
-    </item>
-    
-    <item>
-      <title>Syntax Highlighting</title>
-      <link>https://ericfong.github.io/tmp/syntax-highlighting/</link>
-      <pubDate>Tue, 30 Aug 2011 16:01:23 +0800</pubDate>
-      
-      <guid>https://ericfong.github.io/tmp/syntax-highlighting/</guid>
-      <description>&lt;pre&gt;&lt;code class=&#34;language-js&#34;&gt;function helloWorld () {
-  alert(&amp;quot;Hello, World!&amp;quot;)
-}
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;&lt;/p&gt;</description>
